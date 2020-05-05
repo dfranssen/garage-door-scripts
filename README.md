@@ -6,13 +6,13 @@ Scripts to be used in a HomeBridge Raspberry Pi setup with e.g. the [garagedoor 
 
 Following pins on the rasberry pi (3B+) are supposed to be used (BCM):
 
-- **5** : output to relais
+- **5** : output to relais to mimic a push on the switch in order to open/close the garage door
 - **20** : input to magnetic sensor for CLOSED state
 - **21** : input to magnetic sensor for OPEN state
 
 ## Installation and Configuration
 
-On the raspberry pi:
+On the raspberry pi terminal:
 
 1. Install this project in the home folder of the `pi` user via git pull
 2. Execute `sudo apt-get install git`
@@ -30,7 +30,7 @@ In the admin webapp of HomeBridge:
    - **Enable Polling (in seconds)**: `4`
    - **Log Polling**: `yes`
 
-Back on rasberry, as for some reason the wrong accessory name is set. Check first this [github issue](https://github.com/apexad/homebridge-garagedoor-command/issues/22) if steps below are still required:
+Back on the rasberry terminal, as for some reason the wrong accessory name is set. Check first this [github issue](https://github.com/apexad/homebridge-garagedoor-command/issues/22) if steps below are still required:
 
 1. Execute `sudo vi /var/lib/homebridge/config.json`
 2. Change `"accessory": "AladdinConnectGarageDoorOpener"` to `"accessory": "GarageCommand"`
